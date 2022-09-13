@@ -20,28 +20,32 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="ArchLinux 软件包制作入门 PKGBUILD一个带有一些变量的shell的脚本 PKGBUILD 文件由变量和函数组成，所有这些都是用来定义软件包本身，以及如何构建它。 在包含 PKGBUILD 的目录中运行 makepkg  命令就可以得到一个可以安装的软件包 pkgname 变量安装时定义软件包名称的变量， pacman 根据它来进行包管理 pkgver设置了的软件包的版本，更新系统时">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Archlinux软件包制作入门">
+<meta property="og:url" content="http://example.com/2022/09/13/ArchLinux%20%E8%BD%AF%E4%BB%B6%E5%8C%85%E5%88%B6%E4%BD%9C%E5%85%A5%E9%97%A8/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="ArchLinux 软件包制作入门 PKGBUILD一个带有一些变量的shell的脚本 PKGBUILD 文件由变量和函数组成，所有这些都是用来定义软件包本身，以及如何构建它。 在包含 PKGBUILD 的目录中运行 makepkg  命令就可以得到一个可以安装的软件包 pkgname 变量安装时定义软件包名称的变量， pacman 根据它来进行包管理 pkgver设置了的软件包的版本，更新系统时">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-09-13T06:43:03.000Z">
+<meta property="article:modified_time" content="2022-09-13T06:46:02.626Z">
 <meta property="article:author" content="KexinCC">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/">
+<link rel="canonical" href="http://example.com/2022/09/13/ArchLinux%20%E8%BD%AF%E4%BB%B6%E5%8C%85%E5%88%B6%E4%BD%9C%E5%85%A5%E9%97%A8/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>Hexo</title>
+  <title>Archlinux软件包制作入门 | Hexo</title>
   
 
 
@@ -139,9 +143,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -157,10 +162,9 @@
       <meta itemprop="name" content="Hexo">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/09/13/ArchLinux%20%E8%BD%AF%E4%BB%B6%E5%8C%85%E5%88%B6%E4%BD%9C%E5%85%A5%E9%97%A8/" class="post-title-link" itemprop="url">Archlinux软件包制作入门</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          Archlinux软件包制作入门
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -184,7 +188,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="ArchLinux-软件包制作入门"><a href="#ArchLinux-软件包制作入门" class="headerlink" title="ArchLinux 软件包制作入门"></a>ArchLinux 软件包制作入门</h1><hr>
+        <h1 id="ArchLinux-软件包制作入门"><a href="#ArchLinux-软件包制作入门" class="headerlink" title="ArchLinux 软件包制作入门"></a>ArchLinux 软件包制作入门</h1><hr>
 <h2 id="PKGBUILD"><a href="#PKGBUILD" class="headerlink" title="PKGBUILD"></a>PKGBUILD</h2><p>一个带有一些变量的shell的脚本 <code>PKGBUILD</code> 文件由变量和函数组成，所有这些都是用来定义软件包本身，以及如何构建它。</p>
 <p>在包含 <code>PKGBUILD</code> 的目录中运行 <code>makepkg</code>  命令就可以得到一个可以安装的软件包</p>
 <h3 id="pkgname-变量"><a href="#pkgname-变量" class="headerlink" title="pkgname 变量"></a>pkgname 变量</h3><p>安装时定义软件包名称的变量， pacman 根据它来进行包管理</p>
@@ -203,91 +207,30 @@
 <h2 id="AUR-钉钉-PKGBUILD"><a href="#AUR-钉钉-PKGBUILD" class="headerlink" title="(AUR) 钉钉  PKGBUILD"></a>(AUR) 钉钉  PKGBUILD</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line"># Maintainer: zhullyb &lt;zhullyb [at] outlook dot com&gt;</span><br><span class="line"># Maintainer: yjun &lt;jerrysteve1101 at gmail dot com&gt;</span><br><span class="line"># Contributor: Bruce Zhang &lt;zttt183525594@gmail.com&gt;</span><br><span class="line"></span><br><span class="line">pkgname=dingtalk-bin</span><br><span class="line">_pkgname=dingtalk</span><br><span class="line">_pkgname2=com.alibabainc.dingtalk</span><br><span class="line">pkgver=1.4.0.20909</span><br><span class="line">pkgrel=1</span><br><span class="line">pkgdesc=&quot;钉钉&quot;</span><br><span class="line">arch=(&quot;x86_64&quot;)</span><br><span class="line">url=&quot;https://www.dingtalk.com/&quot;</span><br><span class="line">license=(&quot;custom&quot;)</span><br><span class="line">depends=(&quot;glu&quot; &#x27;gtk2&#x27;)</span><br><span class="line">#makedepends=(&quot;icoutils&quot;)</span><br><span class="line">optdepends=(&#x27;zenity: fix crashes when downloading files, not required on kde.&#x27;)</span><br><span class="line">provides=(&#x27;com.alibabainc.dingtalk&#x27; &#x27;dingtalk&#x27;)</span><br><span class="line">conflicts=(&#x27;com.alibabainc.dingtalk&#x27;)</span><br><span class="line">replaces=(&#x27;com.alibabainc.dingtalk&#x27;)</span><br><span class="line"># https://tms.dingtalk.com/markets/dingtalk/service-terms-zh md5 will change per download</span><br><span class="line">source=(&quot;$&#123;_pkgname&#125;_$&#123;pkgver&#125;-$&#123;arch&#125;.deb::https://dtapp-pub.dingtalk.com/dingtalk-desktop/xc_dingtalk_update/linux_deb/Release/$&#123;_pkgname2&#125;_$&#123;pkgver&#125;_amd64.deb&quot;</span><br><span class="line">        &quot;service-terms-zh&quot;</span><br><span class="line">        &quot;$&#123;_pkgname2&#125;.desktop&quot;</span><br><span class="line">        &quot;dingtalk.sh&quot;</span><br><span class="line">        &quot;$&#123;_pkgname2&#125;.svg&quot;</span><br><span class="line">        &quot;https://archive.archlinux.org/packages/c/cairo/cairo-1.17.4-5-x86_64.pkg.tar.zst&quot;</span><br><span class="line">        &#x27;xdg-open.sh&#x27;</span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># DebSource &amp; pkgver can be get here: https://dtapp-pub.dingtalk.com/dingtalk-desktop/xc_dingtalk_update/linux_deb/Update/other/linux_dingtalk_update.json</span><br><span class="line"></span><br><span class="line">sha512sums=(&#x27;acf4150268e88ea6d3c2c7c6359417143c22a4ac6a5c9f853f05bbfe9798e3962a6aa9ec7c7f4a3708e1ff1b89e726ceb75b48483bf5e4ff32b926e44ffce761&#x27;</span><br><span class="line">            &#x27;b83d493ed68be0f5a6b851fd93d819bb3a6e62feeb71a5bef10bad24b5ea8f3cf09deea4f31ed727449888a6eae1be99fa9cf263bc921cb8bb2958e2f37a7d64&#x27;</span><br><span class="line">            &#x27;c8570ec4cd978e26ac622a83db053a0555324752f5000dc5b3cd680d782138e8ef856f09ec9b7850e04e1faa1e39de94dabeb16fbfbe0fd44af43247b30e8b2f&#x27;</span><br><span class="line">            &#x27;a974db88cf2c0a7cac703dab5b4a84873273cd04a7904124122fde8bab7f9773704d3041816e0096bd3f7e383c012d3ff1e9b0482e241c2dd223ebb759734a88&#x27;</span><br><span class="line">            &#x27;5f05f90704526fbd16371f6f9deaa171a3cac25a103b21daba72a3028ab7cdf9b566a3ac7842c6ce88d30cc29fe0c8b989c77aa36daab73793a827a1a0d6c775&#x27;</span><br><span class="line">            &#x27;94a108a3f3f88bc7ede370d5e3f84afaedd78d892f7352926091881c066cbe0da55bebb5fc83978ca83c6420ed0c94fbba1f3454c5ff8d33a38669a0a11a80ac&#x27;</span><br><span class="line">            &#x27;685f7eb38fd0e34aac3f1e1272f4c6f9404765decee82831b9fc4e743e0b0a022f8e49bd5623f524890a719af0b1333b96773fb386b74aeded4307e8b1a626ed&#x27;)</span><br><span class="line"></span><br><span class="line">prepare()&#123;</span><br><span class="line">    cd $&#123;srcdir&#125;</span><br><span class="line">    tar -Jxvf data.tar.xz -C &quot;$&#123;srcdir&#125;&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">package()&#123;</span><br><span class="line">    cd $&#123;srcdir&#125;</span><br><span class="line"></span><br><span class="line">    mkdir -p $&#123;pkgdir&#125;/opt/$&#123;_pkgname&#125;/release</span><br><span class="line">    mkdir -p $&#123;pkgdir&#125;/usr/share/doc/</span><br><span class="line">    mv opt/apps/$&#123;_pkgname2&#125;/files/*-Release.*/* $&#123;pkgdir&#125;/opt/$&#123;_pkgname&#125;/release</span><br><span class="line">    mv opt/apps/$&#123;_pkgname2&#125;/files/version $&#123;pkgdir&#125;/opt/$&#123;_pkgname&#125;</span><br><span class="line">    mv opt/apps/$&#123;_pkgname2&#125;/files/doc/$&#123;_pkgname2&#125; $&#123;pkgdir&#125;/usr/share/doc/$&#123;_pkgname&#125;</span><br><span class="line"></span><br><span class="line">    # binary wrapper</span><br><span class="line">    install -Dm755 $&#123;srcdir&#125;/dingtalk.sh $&#123;pkgdir&#125;/usr/bin/dingtalk</span><br><span class="line"></span><br><span class="line">    # desktop enrty</span><br><span class="line">    install -Dm644 $&#123;_pkgname2&#125;.desktop -t $&#123;pkgdir&#125;/usr/share/applications/</span><br><span class="line"></span><br><span class="line">    install -Dm644 $&#123;srcdir&#125;/$&#123;_pkgname2&#125;.svg $&#123;pkgdir&#125;/usr/share/icons/hicolor/scalable/apps/$&#123;_pkgname&#125;.svg</span><br><span class="line"></span><br><span class="line">    # license</span><br><span class="line">    install -Dm644 service-terms-zh $&#123;pkgdir&#125;/usr/share/licenses/$&#123;_pkgname&#125;/service-terms-zh.html</span><br><span class="line"></span><br><span class="line">    # fix chinese input in workbench</span><br><span class="line">    rm -rf $&#123;pkgdir&#125;/opt/$&#123;_pkgname&#125;/release/libgtk-x11-2.0.so.*</span><br><span class="line"></span><br><span class="line">    # fix cairo</span><br><span class="line">    cd $srcdir/usr/lib</span><br><span class="line">    install -Dm755 libcairo.so.2 -t $&#123;pkgdir&#125;/usr/lib/dingtalk</span><br><span class="line"></span><br><span class="line">    # fix open url</span><br><span class="line">    install -Dm755 $srcdir/xdg-open.sh $&#123;pkgdir&#125;/opt/dingtalk/release/xdg-open</span><br><span class="line"></span><br><span class="line">    rm -rf $&#123;pkgdir&#125;/opt/$&#123;_pkgname&#125;/release/&#123;libm.so.6,Resources/&#123;i18n/tool/*.exe,qss/mac&#125;,libstdc*&#125;</span><br><span class="line"></span><br><span class="line">    # remove unused lib</span><br><span class="line">    rm -rf $&#123;pkgdir&#125;/opt/$&#123;_pkgname&#125;/release/&#123;libcurl.so.4,libz*&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/12/hello-world/">
+        
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="KexinCC">
-      <meta itemprop="description" content="">
-    </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/09/12/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-09-12 16:23:30" itemprop="dateCreated datePublished" datetime="2022-09-12T16:23:30+08:00">2022-09-12</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/09/12/hello-world/" rel="prev" title="Hello World">
+      <i class="fa fa-chevron-left"></i> Hello World
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
-  
-
-
   
 
 
@@ -340,6 +283,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ArchLinux-%E8%BD%AF%E4%BB%B6%E5%8C%85%E5%88%B6%E4%BD%9C%E5%85%A5%E9%97%A8"><span class="nav-number">1.</span> <span class="nav-text">ArchLinux 软件包制作入门</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#PKGBUILD"><span class="nav-number">1.1.</span> <span class="nav-text">PKGBUILD</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#pkgname-%E5%8F%98%E9%87%8F"><span class="nav-number">1.1.1.</span> <span class="nav-text">pkgname 变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pkgver"><span class="nav-number">1.1.2.</span> <span class="nav-text">pkgver</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pkgdesc"><span class="nav-number">1.1.3.</span> <span class="nav-text">pkgdesc</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#arch"><span class="nav-number">1.1.4.</span> <span class="nav-text">arch</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#package"><span class="nav-number">1.1.5.</span> <span class="nav-text">package()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AUR-%E9%92%89%E9%92%89-PKGBUILD"><span class="nav-number">1.2.</span> <span class="nav-text">(AUR) 钉钉  PKGBUILD</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
